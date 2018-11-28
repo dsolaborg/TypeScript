@@ -6,6 +6,7 @@ type Author = {
     displayNames: string[];
     preferedName?: string;
     emails: string[];
+    password: string[];
 };
 
 type AuthorMap = { [s: string]: Author };
@@ -96,7 +97,7 @@ function sortAuthors(a: string, b: string) {
         return 1;
     }
 }
-
+// password= 
 namespace Commands {
     export const writeAuthors: Command = function () {
         const output = deduplicate(getKnownAuthors().map(getAuthorName).filter(a => !!a)).sort(sortAuthors).join("\r\n* ");
